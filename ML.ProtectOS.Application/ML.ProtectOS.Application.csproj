@@ -40,7 +40,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="ClienteAppService.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\IClienteAppService.cs" />
+    <Compile Include="Interface\IProdutoAppService.cs" />
+    <Compile Include="Produto.cs" />
+    <Compile Include="ProdutoAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ML.ProtectOS.Domain\ML.ProtectOS.Domain.csproj">
+      <Project>{3b315119-9913-4907-a7a1-90b8403139a9}</Project>
+      <Name>ML.ProtectOS.Domain</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\ML.ProtectOS.Infra.Data\ML.ProtectOS.Infra.Data.csproj">
+      <Project>{adcbcc55-2acc-4849-a51a-e12fc27bcd6f}</Project>
+      <Name>ML.ProtectOS.Infra.Data</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
