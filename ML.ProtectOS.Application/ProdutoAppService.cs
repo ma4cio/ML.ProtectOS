@@ -1,4 +1,5 @@
 ﻿using ML.ProtectOS.Application.Interface;
+using ML.ProtectOS.Domain.Entities;
 using ML.ProtectOS.Domain.Interfaces.Services;
 using System;
 using System.Collections.Generic;

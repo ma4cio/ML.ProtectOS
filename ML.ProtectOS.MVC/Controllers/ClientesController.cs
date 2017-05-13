@@ -16,11 +16,17 @@ namespace ML.ProtectOS.MVC.Controllers
     {
 
         private readonly IClienteAppService _clienteAppService;
-
         public ClientesController(IClienteAppService clienteAppService)
         {
             _clienteAppService = clienteAppService;
         }
+
+        //private readonly IClienteAppService _clienteAppService;
+
+        //public ClientesController(IClienteAppService clienteAppService)
+        //{
+        //    _clienteAppService = clienteAppService;
+        //}
 
         // GET: Clientes
         public ActionResult Index()

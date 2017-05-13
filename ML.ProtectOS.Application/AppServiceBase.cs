@@ -10,6 +10,7 @@ namespace ML.ProtectOS.Application
 {
     public class AppServiceBase<TEntity> : IDisposable, IAppServiceBase<TEntity> where TEntity : class
     {
+        
         private readonly IServiceBase<TEntity> _serviceBase;
         public AppServiceBase(IServiceBase<TEntity> serviceBase)
         {

@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26403.3
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "0 - Presentation", "0 - Presentation", "{69CE5DEE-159E-495B-86AF-85D77E357D5F}"
 EndProject
@@ -25,6 +25,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.ProtectOS.Domain", "ML.P
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.ProtectOS.Infra.Data", "ML.ProtectOS.Infra.Data\ML.ProtectOS.Infra.Data.csproj", "{ADCBCC55-2ACC-4849-A51A-E12FC27BCD6F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ML.ProtectOS.Infra.CrossCutting.IoC", "ML.ProtectOS.Infra.CrossCutting.IoC\ML.ProtectOS.Infra.CrossCutting.IoC.csproj", "{544A3169-D870-45A6-A3A6-C2767DA208BB}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -47,6 +49,10 @@ Global
 		{ADCBCC55-2ACC-4849-A51A-E12FC27BCD6F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{ADCBCC55-2ACC-4849-A51A-E12FC27BCD6F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{ADCBCC55-2ACC-4849-A51A-E12FC27BCD6F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{544A3169-D870-45A6-A3A6-C2767DA208BB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{544A3169-D870-45A6-A3A6-C2767DA208BB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{544A3169-D870-45A6-A3A6-C2767DA208BB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{544A3169-D870-45A6-A3A6-C2767DA208BB}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -58,5 +64,6 @@ Global
 		{19CCBB39-1FAC-4095-89A0-1ADF10182429} = {938961F5-5D53-46BE-885F-5CD882FC46E2}
 		{3B315119-9913-4907-A7A1-90B8403139A9} = {287B5F40-E1A7-4F0C-B070-4F5253F8C148}
 		{ADCBCC55-2ACC-4849-A51A-E12FC27BCD6F} = {C7A41B69-3030-470F-A930-B01209C838B1}
+		{544A3169-D870-45A6-A3A6-C2767DA208BB} = {436AAF10-E1D5-4D11-90B8-41D70EE2C173}
 	EndGlobalSection
 EndGlobal
