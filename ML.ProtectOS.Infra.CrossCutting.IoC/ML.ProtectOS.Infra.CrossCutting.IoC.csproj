@@ -68,6 +68,10 @@
       <Project>{3b315119-9913-4907-a7a1-90b8403139a9}</Project>
       <Name>ML.ProtectOS.Domain</Name>
     </ProjectReference>
+    <ProjectReference Include="..\ML.ProtectOS.Infra.CrossCutting.Identity\ML.ProtectOS.Infra.CrossCutting.Identity.csproj">
+      <Project>{2402d056-d885-4555-9587-76ac143480bb}</Project>
+      <Name>ML.ProtectOS.Infra.CrossCutting.Identity</Name>
+    </ProjectReference>
     <ProjectReference Include="..\ML.ProtectOS.Infra.Data\ML.ProtectOS.Infra.Data.csproj">
       <Project>{adcbcc55-2acc-4849-a51a-e12fc27bcd6f}</Project>
       <Name>ML.ProtectOS.Infra.Data</Name>

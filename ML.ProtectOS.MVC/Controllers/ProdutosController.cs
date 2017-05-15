@@ -1,4 +1,7 @@
-﻿using ML.ProtectOS.Application.Interface;
+﻿using AutoMapper;
+using ML.ProtectOS.Application.Interface;
+using ML.ProtectOS.Domain.Entities;
+using ML.ProtectOS.MVC.ViewModels;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,89 +12,105 @@ namespace ML.ProtectOS.MVC.Controllers
 {
     public class ProdutosController : Controller
     {
-        private readonly IProdutoAppService _produtoApp;
+        private readonly IProdutoAppService _produtoAppService;
+        private readonly IClienteAppService _clienteAppService;
 
-        public ProdutosController(IProdutoAppService produtoApp)
+
+        public ProdutosController(IProdutoAppService produtoAppService, IClienteAppService clienteAppService )
         {
-            _produtoApp = produtoApp;
+            _produtoAppService = produtoAppService;
+            _clienteAppService = clienteAppService;
         }
 
-        // GET: Produtos
+
+
+        // GET: Clientes
         public ActionResult Index()
         {
-            return View();
+            var produtoViewModel = Mapper.Map<IEnumerable<Produto>, IEnumerable<ProdutoViewModel>>(_produtoAppService.GetAll());
+            return View(produtoViewModel);
         }
 
-        // GET: Produtos/Details/5
+   
+        // GET: Clientes/Details/5
         public ActionResult Details(int id)
         {
-            return View();
+            var produto = _produtoAppService.GetById(id);
+            var produtoViewModel = Mapper.Map<Produto, ProdutoViewModel>(produto);
+            return View(produtoViewModel);
         }
 
-        // GET: Produtos/Create
+        // GET: Clientes/Create
         public ActionResult Create()
         {
+            ViewBag.ClienteId = new SelectList(_clienteAppService.GetAll(), "ClienteId", "Nome");
             return View();
         }
 
-        // POST: Produtos/Create
+        // POST: Clientes/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ProdutoViewModel produto)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var produtoDomain = Mapper.Map<ProdutoViewModel, Produto>(produto);
+                _produtoAppService.Add(produtoDomain);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            ViewBag.ClienteId = new SelectList(_clienteAppService.GetAll(), "ClienteId", "Nome",produto.ClienteId);
+            return View(produto);
         }
 
-        // GET: Produtos/Edit/5
+        // GET: Clientes/Edit/5
         public ActionResult Edit(int id)
         {
-            return View();
+            var produto = _produtoAppService.GetById(id);
+            var produtoViewModel = Mapper.Map<Produto, ProdutoViewModel>(produto);
+
+            ViewBag.ClienteId = new SelectList(_clienteAppService.GetAll(), "ClienteId", "Nome", produto.ClienteId);
+
+            return View(produtoViewModel);
         }
 
-        // POST: Produtos/Edit/5
+        // POST: Clientes/Edit/5
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Edit(ProdutoViewModel produto)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add update logic here
+                var produtoDomain = Mapper.Map<ProdutoViewModel, Produto>(produto);
+                _produtoAppService.Update(produtoDomain);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            ViewBag.ClienteId = new SelectList(_clienteAppService.GetAll(), "ClienteId", "Nome", produto.ClienteId);
+            return View(produto);
         }
 
-        // GET: Produtos/Delete/5
+        // GET: Clientes/Delete/5
         public ActionResult Delete(int id)
         {
-            return View();
+            var produto = _produtoAppService.GetById(id);
+            var produtoViewModel = Mapper.Map<Produto, ProdutoViewModel>(produto);
+
+            return View(produtoViewModel);
         }
 
-        // POST: Produtos/Delete/5
-        [HttpPost]
+        // POST: Clientes/Delete/5
+        [HttpPost, ActionName("Delete")]
+        [ValidateAntiForgeryToken]
         public ActionResult Delete(int id, FormCollection collection)
         {
-            try
-            {
-                // TODO: Add delete logic here
+            var produto = _produtoAppService.GetById(id);
+            _produtoAppService.Remove(produto);
 
-                return RedirectToAction("Index");
-            }
-            catch
-            {
-                return View();
-            }
+            return RedirectToAction("Index");
         }
+
     }
 }

@@ -21,13 +21,6 @@ namespace ML.ProtectOS.MVC.Controllers
             _clienteAppService = clienteAppService;
         }
 
-        //private readonly IClienteAppService _clienteAppService;
-
-        //public ClientesController(IClienteAppService clienteAppService)
-        //{
-        //    _clienteAppService = clienteAppService;
-        //}
-
         // GET: Clientes
         public ActionResult Index()
         {
@@ -86,7 +79,7 @@ namespace ML.ProtectOS.MVC.Controllers
             if (ModelState.IsValid)
             {
                 var clienteDomain = Mapper.Map<ClienteViewModel, Cliente>(cliente);
-                _clienteAppService.Add(clienteDomain);
+                _clienteAppService.Update(clienteDomain);
 
                 return RedirectToAction("Index");
             }

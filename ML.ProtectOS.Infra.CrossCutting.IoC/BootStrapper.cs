@@ -3,6 +3,9 @@ using ML.ProtectOS.Application.Interface;
 using ML.ProtectOS.Domain.Interfaces.Repositories;
 using ML.ProtectOS.Domain.Interfaces.Services;
 using ML.ProtectOS.Domain.Services;
+using ML.ProtectOS.Infra.CrossCutting.Identity.Configuration;
+using ML.ProtectOS.Infra.CrossCutting.Identity.Context;
+using ML.ProtectOS.Infra.CrossCutting.Identity.Model;
 using ML.ProtectOS.Infra.Data.Repositories;
 using SimpleInjector;
 namespace ML.ProtectOS.Infra.CrossCutting.IoC
@@ -12,12 +15,12 @@ namespace ML.ProtectOS.Infra.CrossCutting.IoC
         public static void RegisterServices(Container container)
         {
 
-            //container.RegisterPerWebRequest<ApplicationDbContext>();
-            //container.RegisterPerWebRequest<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()));
-            //container.RegisterPerWebRequest<IRoleStore<IdentityRole, string>>(() => new RoleStore<IdentityRole>());
-            //container.RegisterPerWebRequest<ApplicationRoleManager>();
-            //container.RegisterPerWebRequest<ApplicationUserManager>();
-            //container.RegisterPerWebRequest<ApplicationSignInManager>();
+            container.Register<ApplicationDbContext>();
+            container.Register<IUserStore<ApplicationUser>>(() => new UserStore<ApplicationUser>(new ApplicationDbContext()));
+            container.Register<IRoleStore<IdentityRole, string>>(() => new RoleStore<IdentityRole>());
+            container.Register<ApplicationRoleManager>();
+            container.Register<ApplicationUserManager>();
+            container.Register<ApplicationSignInManager>();
 
 
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
