@@ -1,4 +1,6 @@
-﻿using ML.ProtectOS.Application;
+﻿using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
+using ML.ProtectOS.Application;
 using ML.ProtectOS.Application.Interface;
 using ML.ProtectOS.Domain.Interfaces.Repositories;
 using ML.ProtectOS.Domain.Interfaces.Services;
