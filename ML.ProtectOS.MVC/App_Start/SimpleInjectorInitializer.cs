@@ -27,15 +27,15 @@ namespace ML.ProtectOS.MVC.App_Start
 
             // Necessário para registrar o ambiente do Owin que é dependência do Identity
             // Feito fora da camada de IoC para não levar o System.Web para fora
-            //container.Register(() =>
-            //{
-            //    if (HttpContext.Current != null && HttpContext.Current.Items["owin.Environment"] == null && container.IsVerifying())
-            //    {
-            //        return new OwinContext().Authentication;
-            //    }
-            //    return HttpContext.Current.GetOwinContext().Authentication;
+            container.Register(() =>
+            {
+                if (HttpContext.Current != null && HttpContext.Current.Items["owin.Environment"] == null && container.IsVerifying())
+                {
+                    return new OwinContext().Authentication;
+                }
+                return HttpContext.Current.GetOwinContext().Authentication;
 
-            //});
+            });
 
             container.RegisterMvcControllers(Assembly.GetExecutingAssembly());
             container.Verify();
