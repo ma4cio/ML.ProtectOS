@@ -138,6 +138,7 @@
     <Compile Include="Model\SendCodeViewModel.cs" />
     <Compile Include="Model\SetPasswordViewModel.cs" />
     <Compile Include="Model\VerifyCodeViewModel.cs" />
+    <Compile Include="Model\VerifyPhoneNumberViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

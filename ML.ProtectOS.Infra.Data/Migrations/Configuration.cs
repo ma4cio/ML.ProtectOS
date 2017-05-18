@@ -9,7 +9,7 @@ namespace ML.ProtectOS.Infra.Data.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = true;
+            AutomaticMigrationsEnabled = false;
         }
 
         protected override void Seed(ML.ProtectOS.Infra.Data.Context.ProtectOSContext context)

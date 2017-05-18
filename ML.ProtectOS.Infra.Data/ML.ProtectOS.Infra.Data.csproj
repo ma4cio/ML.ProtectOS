@@ -51,6 +51,7 @@
     <Compile Include="Context\ProtectOSContext.cs" />
     <Compile Include="EntityConfig\ClienteConfiguration.cs" />
     <Compile Include="EntityConfig\ProdutoConfiguration.cs" />
+    <Compile Include="EntityConfig\UsuarioConfiguration.cs" />
     <Compile Include="Migrations\201705130452136_inicio.cs" />
     <Compile Include="Migrations\201705130452136_inicio.Designer.cs">
       <DependentUpon>201705130452136_inicio.cs</DependentUpon>
@@ -60,6 +61,7 @@
     <Compile Include="Repositories\ClienteRepository.cs" />
     <Compile Include="Repositories\ProdutoRepository.cs" />
     <Compile Include="Repositories\RepositoryBase.cs" />
+    <Compile Include="Repositories\UsuarioRepository.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ML.ProtectOS.Domain\ML.ProtectOS.Domain.csproj">
