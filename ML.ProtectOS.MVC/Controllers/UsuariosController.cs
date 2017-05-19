@@ -20,7 +20,8 @@ namespace ML.ProtectOS.MVC.Controllers
         // GET: Usuarios
         public ActionResult Index()
         {
-            return View(_usuarioRepository.ObterTodos());
+            var lista = _usuarioRepository.ObterTodos();
+            return View(lista);
         }
 
         // GET: Usuarios/Details/5

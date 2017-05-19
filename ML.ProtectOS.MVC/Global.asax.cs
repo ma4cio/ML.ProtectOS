@@ -7,10 +7,14 @@ using System.Web.Mvc;
 using System.Web.Optimization;
 using System.Web.Routing;
 
+using System.Data.Entity;
+using ML.ProtectOS.Infra.Data;
+
 namespace ML.ProtectOS.MVC
 {
-    public class MvcApplication : System.Web.HttpApplication
-    {
+    public class MvcApplication : HttpApplication
+    {       
+
         protected void Application_Start()
         {
             AreaRegistration.RegisterAllAreas();
@@ -19,6 +23,7 @@ namespace ML.ProtectOS.MVC
             BundleConfig.RegisterBundles(BundleTable.Bundles);
 
             AutoMapperConfig.RegisterMappings();
+          
         }
     }
 }

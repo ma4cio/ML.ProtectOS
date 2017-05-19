@@ -11,7 +11,7 @@ namespace ML.ProtectOS.Infra.CrossCutting.Identity.Context
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>, IDisposable
     {
         public ApplicationDbContext()
-            : base("ProtectOSContext", throwIfV1Schema: false)
+            : base("DefaultConnection", throwIfV1Schema: false)
         {
         }
 

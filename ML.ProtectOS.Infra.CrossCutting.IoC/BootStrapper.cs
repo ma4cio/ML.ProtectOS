@@ -28,6 +28,7 @@ namespace ML.ProtectOS.Infra.CrossCutting.IoC
             container.Register(typeof(IRepositoryBase<>), typeof(RepositoryBase<>), Lifestyle.Scoped);
             container.Register(typeof(IClienteRepository), typeof(ClienteRepository), Lifestyle.Scoped);
             container.Register(typeof(IProdutoRepository), typeof(ProdutoRepository), Lifestyle.Scoped);
+            container.Register(typeof(IUsuarioRepository), typeof(UsuarioRepository), Lifestyle.Scoped);
 
             container.Register(typeof(IServiceBase<>), typeof(ServiceBase<>), Lifestyle.Scoped);
             container.Register(typeof(IClienteService), typeof(ClienteService), Lifestyle.Scoped);

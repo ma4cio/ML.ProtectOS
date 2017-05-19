@@ -14,6 +14,7 @@ namespace ML.ProtectOS.Infra.Data.Context
         {
 
         }
+
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Cliente> Clientes { get; set; }
         public DbSet<Produto> Produtos { get; set; }
@@ -36,8 +37,7 @@ namespace ML.ProtectOS.Infra.Data.Context
 
             modelBuilder.Configurations.Add(new ClienteConfiguration());
             modelBuilder.Configurations.Add(new ProdutoConfiguration());
-            modelBuilder.Configurations.Add(new UsuarioConfiguration());
-
+            //modelBuilder.Configurations.Add(new UsuarioConfiguration());
         }
 
         public override int SaveChanges()
